@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let post of posts">
+        {{post.title}} 
+        <p style="color: coral">{{post.content}}</p> 
+        <p *ngIf="posts.length <= 0">No posts added yet!</p>
+        <div>
+            <button class="edit-btn">EDIT</button>
+            <button class="delete-btn">DELETE</button>
+        </div>
+    </li>
+</ul>
