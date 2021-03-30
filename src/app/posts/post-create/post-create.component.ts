@@ -11,7 +11,7 @@ export class PostCreateComponent implements OnInit {
 
   enteredContent = '';
   enteredTitle = '';
-  newPost = 'NO CONTENT';
+  newPost = '';
 
   constructor(public postsService: PostsService) { }
 
