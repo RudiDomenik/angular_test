@@ -1,21 +1,21 @@
-
-<form (submit)="onAddPost(postForm)" #postForm="ngForm">
+<div class="loader" *ngIf="isLoading"></div>
+<form (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="!isLoading">
     <input type="text"
-    ngModel
-    required
-    #title="ngModel"
-    placeholder="Post Title"
-    name="title">
+      [ngModel]="post?.title"
+      required
+      #title="ngModel"
+      placeholder="Post Title"
+      name="title">
     <p class="error"
-    *ngIf="title.invalid && postForm.touched"
-    >Please enter a post title</p>
+      *ngIf="title.invalid && postForm.touched"
+      >Please enter a post title</p>
     <br>
     <textarea rows="8"
-    ngModel
-    placeholder="Post content"
-    name="content"></textarea>
+      [ngModel]="post?.content"
+      placeholder="Post content"
+      name="content"></textarea>
     <hr>
     <button type="submit">Save Post</button>
-    <p>{{newPost}}</p>
 </form>
+
 

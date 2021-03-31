@@ -1,10 +1,11 @@
-<ul>
-  <p *ngIf="posts.length <= 0">No posts added yet!</p>
+<div class="loader" *ngIf="isLoading"></div>
+<ul *ngIf="!isLoading">
+  <p *ngIf="posts.length <= 0 && !isLoading">No posts added yet!</p>
   <li *ngFor="let post of posts">
       {{post.title}}
       <p style="color: coral">{{post.content}}</p>
       <div>
-          <button class="edit-btn">EDIT</button>
+          <a class="edit-btn" [routerLink]="['/edit', post.id]">EDIT</a>
           <button class="delete-btn" (click)="onDelete(post.id)">DELETE</button>
       </div>
   </li>

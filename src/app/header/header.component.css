@@ -1,5 +1,23 @@
 .header {
     background-color: black;
     color: white;
-    text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.spacer {
+  float: right;
+}
+
+.btn {
+  color: aqua;
 }
